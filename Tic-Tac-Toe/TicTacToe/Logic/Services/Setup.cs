@@ -2,7 +2,7 @@
 using TicTacToe.Models;
 using TicTacToe.Logic.Interfaces;
 
-namespace TicTacToe.Logic.Service
+namespace TicTacToe.Logic.Services
 {
     public class Setup : ISetup
     {

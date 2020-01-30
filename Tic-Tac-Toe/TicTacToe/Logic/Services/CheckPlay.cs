@@ -2,7 +2,7 @@
 using TicTacToe.Models;
 using TicTacToe.Logic.Interfaces;
 
-namespace TicTacToe.Logic.Service
+namespace TicTacToe.Logic.Services
 {
     public class CheckPlay : ICheckPlay
     {
@@ -35,7 +35,7 @@ namespace TicTacToe.Logic.Service
             int x = lastPlay.x; // the row we are checking
             for(int i = 0; i < grid.Size; i++)
             {
-                if (grid.Grid[x, i] != player)
+                if (lastPlay.y != i && grid.Grid[x, i] != player)
                     return false;
             }
             return true;
@@ -48,7 +48,7 @@ namespace TicTacToe.Logic.Service
             int y = lastPlay.y; // the column we are checking
             for (int i = 0; i < grid.Size; i++)
             {
-                if (grid.Grid[i, y] != player)
+                if (lastPlay.x != i && grid.Grid[i, y] != player)
                     return false;
             }
             return true;
@@ -65,7 +65,7 @@ namespace TicTacToe.Logic.Service
             {
                 for(int i = 0; i < grid.Size; i++)
                 {
-                    if (grid.Grid[i, i] != player)
+                    if (lastPlay.x != i && grid.Grid[i, i] != player)
                         return false;
                 }
             }
@@ -74,7 +74,7 @@ namespace TicTacToe.Logic.Service
                 int y = grid.Size-1;
                 for(int x = 0; x < grid.Size; x++)
                 {
-                    if (grid.Grid[x, y] != player)
+                    if ((lastPlay.x != x && lastPlay.y !=y) && grid.Grid[x, y] != player)
                         return false;
                     y--;
                 }
