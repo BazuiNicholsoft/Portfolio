@@ -35,9 +35,9 @@ namespace TicTacToe.Models
                 throw new Exception("Cannot create a Board with a null grid.");
         }
         
-        public void PlaceItem(char player, int[] position)
+        public void PlaceItem(char player, GridPos position)
         {
-            Grid[position[0], position[1]] = player;
+            Grid[position.x, position.y] = player;
         }
 
     }

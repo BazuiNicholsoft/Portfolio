@@ -1,6 +1,6 @@
-﻿using System;
-using TicTacToe.Models;
+﻿using TicTacToe.Models;
 using TicTacToe.Logic.Interfaces;
+using System.Collections.Generic;
 
 namespace TicTacToe.Logic.Services
 {
@@ -25,7 +25,19 @@ namespace TicTacToe.Logic.Services
         //Return a list of all legal and available positions. (Used for AI logic)
         public GridPos[] GetAvailable(Board grid)
         {
-            throw new NotImplementedException();
+            List<GridPos> available = new List<GridPos>();
+            for(int x = 0; x < grid.Size; x++)
+            {
+                for(int y = 0; y < grid.Size; y++)
+                {
+                    GridPos newGridPos = new GridPos(x, y);
+                    if(CheckAvailable(grid, newGridPos)){
+                        available.Add(newGridPos);
+                    }
+                }
+            }
+
+            return available.ToArray();
         }
 
         //Check to see if the player won horizontally

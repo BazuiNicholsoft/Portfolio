@@ -7,29 +7,23 @@ namespace TicTacToe.Logic.Services.AI
 {
     public class MediumBot : IArtificalIntelligence
     {
-        private ICheckPlay _checkPlay;
-        private readonly Random random;
         private readonly Player bot;
-        public MediumBot(ICheckPlay checkPlay, Player botPlayer)
+        private readonly IAILogic _aIlogic;
+        public MediumBot(IAILogic aILogic, Player botPlayer)
         {
-            _checkPlay = checkPlay;
-            random = new Random();
+            _aIlogic = aILogic;
             bot = botPlayer;
         }
 
         public GridPos MakeMove(Board board)
         {
-            GridPos[] available = _checkPlay.GetAvailable(board);
-
-            for(int i = 0; i < available.Length; i++)
+            GridPos possibleWinMove = _aIlogic.WinningMove(board, bot);
+            if(possibleWinMove.x != -1)
             {
-                if(_checkPlay.CheckWin(board, bot.Side, available[i]))
-                {
-                    return available[i];
-                }
+                return possibleWinMove;
             }
 
-            return available[random.Next(0, available.Length - 1)];           
+            return _aIlogic.RandomMove(board);
 
         }
     }

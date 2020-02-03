@@ -7,21 +7,30 @@ namespace TicTacToe.Logic.Services.AI
 {
     public class HardBot : IArtificalIntelligence
     {
-        private readonly ICheckPlay _checkPlay;
-
-        public HardBot(ICheckPlay checkPlay)
+        private readonly Player bot;
+        private readonly IAILogic _aILogic;
+        public HardBot(IAILogic aILogic, Player player)
         {
-            _checkPlay = checkPlay;
+            _aILogic = aILogic;
+            bot = player;
         }
 
         public GridPos MakeMove(Board board)
         {
-            GridPos[] available = _checkPlay.GetAvailable(board);
+            GridPos move = _aILogic.WinningMove(board, bot);
+            if (move.x != -1)
+                return move;
 
-            for(int i = 0; i < available.Length; i++)
-            {
+            move = _aILogic.CenterMove(board);
+            if (move.x != -1)
+                return move;
 
-            }
+            move = _aILogic.CornerMove(board);
+            if (move.x != -1)
+                return move;
+
+            return _aILogic.RandomMove(board);
+
         }
     }
 }

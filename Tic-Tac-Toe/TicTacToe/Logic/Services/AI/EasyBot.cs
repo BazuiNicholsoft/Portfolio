@@ -1,25 +1,19 @@
-﻿using System.Collections.Generic;
-using TicTacToe.Logic.Interfaces;
+﻿using TicTacToe.Logic.Interfaces;
 using TicTacToe.Models;
-using System;
 
 namespace TicTacToe.Logic.Services.AI
 {
     class EasyBot : IArtificalIntelligence
     {
-        private ICheckPlay _checkPlay;
-        private Random _random;
-        public EasyBot(ICheckPlay checkPlay)
+        private IAILogic _AILogic;
+        public EasyBot(IAILogic aILogic)
         {
-            _checkPlay = checkPlay;
-            _random = new Random();
+            _AILogic = aILogic;
         }
 
         public GridPos MakeMove(Board board)
         {
-            GridPos[] available = _checkPlay.GetAvailable(board);
-            int choice = _random.Next(0, available.Length - 1);
-            return available[choice];
+            return _AILogic.RandomMove(board);
         }
     }
 }
