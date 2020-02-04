@@ -17,5 +17,16 @@
         {
             IsFirstPlayer = !IsFirstPlayer;
         }
+
+        public override bool Equals(object obj)
+        {
+            return (obj is Player) && ((Player)obj).Side == Side && ((Player)obj).IsFirstPlayer == IsFirstPlayer && ((Player)obj).IsAI == IsAI;
+        }
+
+        public override int GetHashCode()
+        {
+            return Side;
+        }
+
     }
 }
