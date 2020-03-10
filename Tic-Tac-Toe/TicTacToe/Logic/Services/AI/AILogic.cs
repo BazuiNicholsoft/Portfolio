@@ -16,9 +16,24 @@ namespace TicTacToe.Logic.Services.AI
             random = new Random();
         }
 
-        public GridPos BlockingMove(Board board)
+        public GridPos BlockingMove(Board board, Player playerToBlock)
         {
-            throw new NotImplementedException();
+            var available = _checkPlay.GetAvailable(board);
+
+            List<GridPos> blocks = new List<GridPos>();
+
+            foreach (var move in available)
+            {
+                if (_checkPlay.CheckWin(board, playerToBlock.Side, move))
+                    blocks.Add(move);
+            }
+
+            if(blocks.Count > 0)
+            {
+                return RandomMove(blocks);
+            }
+            //Nothing to block
+            return new GridPos(-1, -1);
         }
 
         public GridPos CenterMove(Board board)
@@ -65,6 +80,11 @@ namespace TicTacToe.Logic.Services.AI
             //Go anywhere available
             GridPos[] available = _checkPlay.GetAvailable(board);
             return RandomMove(available);
+        }
+
+        public GridPos RandomMove(List<GridPos> available)
+        {
+            return RandomMove(available.ToArray());
         }
 
         public GridPos RandomMove(GridPos[] available)
