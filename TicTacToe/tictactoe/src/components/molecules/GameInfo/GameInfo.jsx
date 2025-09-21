@@ -1,7 +1,7 @@
 
 const GameInfo = ({ wins, draws, losses, currPlayer, winner }) => {
     return (
-        <div className="Game-info">
+        <div className="GameInfo">
             <p>Player 1: X</p>
             <p>Player 2: O</p>
             <p>Wins: {wins ?? 0}</p>

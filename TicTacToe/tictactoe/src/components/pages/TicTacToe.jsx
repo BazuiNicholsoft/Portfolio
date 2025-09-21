@@ -17,12 +17,7 @@ const TicTacToe = () => {
 
   const onClickStart = () => {
     if (inprogress !== true) {
-      alert('Game Started!');
       setInProgress(true);
-    }
-    else 
-    {
-      alert('Game Restarted!');
     }
     setBoard(Array(9).fill(null));
     setCurrPlayer('X');
@@ -45,8 +40,10 @@ const TicTacToe = () => {
       } else {
         setLosses(losses + 1);
       }
+      setInProgress(false);
     } else if (newBoard.every(cell => cell)) {
       setDraws(draws + 1);
+      setInProgress(false);
     } else {
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
@@ -71,16 +68,20 @@ const TicTacToe = () => {
   }
 
   return (
-  <div className="App">
+  <div className="MainContainer">
     <Header text="Tic Tac Toe Game" />
-    <Button label={inprogress ? "Restart Game" : "Start Game"} onClick={onClickStart} />
-    <div>
-      <GameInfo wins={wins} draws={draws} losses={losses} currPlayer={currPlayer} winner={winner} />
-      {/* Render the Tic Tac Toe grid here */}
-      <GameBoard board={board} onClickCell={onClickCell} />
+    <div className="GameContainer">
+      <div className="ButtonContainer">
+        <Button label={inprogress ? "Restart Game" : "Start Game"} onClick={onClickStart} />
+      </div>
+      <div className="InfoBoardContainer">
+        <GameInfo wins={wins} draws={draws} losses={losses} currPlayer={currPlayer} winner={winner} />
+      </div>
+      <div className="GameBoardContainer">
+        <GameBoard board={board} onClickCell={onClickCell} />
+      </div>
     </div>
   </div>
-
   );
 };
 export default TicTacToe;

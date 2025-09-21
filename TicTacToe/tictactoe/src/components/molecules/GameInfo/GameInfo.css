@@ -1,0 +1,4 @@
+.GameInfo {
+    flex: 0 0 auto; /* Prevent stretching, keep on the left */
+    text-align: right;
+}

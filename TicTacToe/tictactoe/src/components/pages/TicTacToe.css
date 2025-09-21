@@ -1,3 +1,38 @@
-.App {
-  text-align: center;
+.MainContainer {
+  height: 100vh;
+  background-color: #AAAAAA;
+}
+
+
+.GameContainer {
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 40px 40px;
+    width: 100%;
+}
+
+.ButtonContainer {
+    grid-column: 1 / span 2; /* Span both columns */
+    grid-row: 1;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.InfoBoardContainer {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: flex-start;
+    text-align: right;
+}
+
+.GameBoardContainer {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: stretch; /* Take full height of grid row */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    height: 100%;
 }

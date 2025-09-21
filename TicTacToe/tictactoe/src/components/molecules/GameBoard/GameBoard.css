@@ -1,0 +1,10 @@
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.boardRow {
+    display: flex;
+}

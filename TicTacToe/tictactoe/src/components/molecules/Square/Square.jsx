@@ -1,9 +1,10 @@
 import { Button } from "../../atoms";
 import styles from '../../atoms/Button/Button.module.css';
 
-const Square = ({ value, onClick }) => {
+const Square = ({ value, className, onClick }) => {
+  const classes = [styles.squareButton, className].filter(Boolean).join(' ');
   return (
-    <Button className={styles.squareButton} onClick={onClick} label={value} />
+    <Button className={classes} onClick={onClick} label={value} />
   );
 };
 
