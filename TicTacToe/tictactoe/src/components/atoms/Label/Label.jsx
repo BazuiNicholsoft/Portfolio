@@ -1,8 +1,8 @@
 import React from "react";
-import './Label.css';
+import './Label.module.css';
 
-const Label = ({ text }) => {
-  return <label className="atom-label">{text}</label>;
+const Label = ({ text, className }) => {
+  return <label className={className}>{text}</label>;
 };
 
 export default Label;

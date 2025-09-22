@@ -1,14 +1,33 @@
-
+import React from 'react';
+import Label from '../../atoms/Label/Label';
+import './GameInfo.css';
+import labelStyles from '../../atoms/Label/Label.module.css';
 const GameInfo = ({ wins, draws, losses, currPlayer, winner }) => {
     return (
-        <div className="GameInfo">
-            <p>Player 1: X</p>
-            <p>Player 2: O</p>
-            <p>Wins: {wins ?? 0}</p>
-            <p>Draws: {draws ?? 0}</p>
-            <p>Losses: {losses ?? 0}</p>
-            <p>Current Player: {currPlayer ?? "None"}</p>
-            <p>Winner: {winner ?? "None"}</p>
+        <div className="GameInfoContainer">
+            <div className="GameInfoBackground">
+                <div className="LabelRow">
+                    <Label text="Player 1: " className={labelStyles.label} /> <Label text="X" className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Player 2: " className={labelStyles.label} /> <Label text="O" className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Wins: " className={labelStyles.label} /> <Label text={wins ?? 0} className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Draws: " className={labelStyles.label} /> <Label text={draws ?? 0} className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Losses: " className={labelStyles.label} /> <Label text={losses ?? 0} className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Current Player: " className={labelStyles.label} /> <Label text={currPlayer ?? "None"} className={labelStyles.value} />
+                </div>
+                <div className="LabelRow">
+                    <Label text="Winner: " className={labelStyles.label} /> <Label text={winner ?? "None"} className={labelStyles.value} />
+                </div>
+            </div>
         </div>
     );
 }

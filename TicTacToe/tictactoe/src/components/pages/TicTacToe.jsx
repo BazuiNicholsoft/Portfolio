@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import { Header, Button } from '../atoms';
 import { GameInfo } from '../molecules';
 import { GameBoard } from '../molecules';
-import './TicTacToe.css';
-
+import ticTacToeStyles from './TicTacToe.module.css';
+import ButtonStyles from '../atoms/Button/Button.module.css';
 
 
 const TicTacToe = () => {
@@ -68,16 +68,16 @@ const TicTacToe = () => {
   }
 
   return (
-  <div className="MainContainer">
+  <div className={ticTacToeStyles.MainContainer}>
     <Header text="Tic Tac Toe Game" />
-    <div className="GameContainer">
-      <div className="ButtonContainer">
-        <Button label={inprogress ? "Restart Game" : "Start Game"} onClick={onClickStart} />
+    <div className={ticTacToeStyles.GameContainer}>
+      <div className={ticTacToeStyles.ButtonContainer}>
+        <Button label={inprogress ? "Restart Game" : "Start Game"} className={ButtonStyles.button} onClick={onClickStart} />
       </div>
-      <div className="InfoBoardContainer">
+      <div className={ticTacToeStyles.InfoBoardContainer}>
         <GameInfo wins={wins} draws={draws} losses={losses} currPlayer={currPlayer} winner={winner} />
       </div>
-      <div className="GameBoardContainer">
+      <div className={ticTacToeStyles.GameBoardContainer}>
         <GameBoard board={board} onClickCell={onClickCell} />
       </div>
     </div>

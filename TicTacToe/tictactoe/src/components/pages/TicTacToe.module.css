@@ -3,24 +3,41 @@
   background-color: #AAAAAA;
 }
 
-
 .GameContainer {
     display: grid;
     grid-template-columns: 45% 1fr;
     grid-template-rows: auto 1fr;
-    gap: 40px 40px;
-    width: 100%;
+    gap: 10px 40px;
+    width: 550px;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .GameContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        width: 95vw;
+        gap: 20px 0;
+    }
+    .InfoBoardContainer,
+    .GameBoardContainer {
+        grid-column: 1;
+        grid-row: auto;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 .ButtonContainer {
     grid-column: 1 / span 2; /* Span both columns */
     grid-row: 1;
-    margin-bottom: 20px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
 .InfoBoardContainer {
+    display: flex;
     grid-column: 1;
     grid-row: 2;
     align-self: flex-start;

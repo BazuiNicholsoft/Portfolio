@@ -1,4 +1,11 @@
-.GameInfo {
-    flex: 0 0 auto; /* Prevent stretching, keep on the left */
+.GameInfoContainer {
+    margin-top: 20px;
     text-align: right;
+}
+
+.GameInfoBackground {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
 }
