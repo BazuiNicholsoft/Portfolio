@@ -13,5 +13,8 @@ namespace API_Practice.src.models.databaseModels
         public bool IS_PRIMARY { get; set; }
         public DateTime CREATED_AT { get; set; }
         public DateTime MODIFIED_AT { get; set; }
+
+        // Navigation property
+        public required CustomerModel CUSTOMER { get; set; }
     }   
 }

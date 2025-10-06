@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using API_Practice.src.enums;
 
 namespace API_Practice.src.models.databaseModels
 {
@@ -9,7 +10,7 @@ namespace API_Practice.src.models.databaseModels
 
         public required int ACCOUNT_ID { get; set; }
 
-        public required string TRANSACTION_TYPE { get; set; }
+        public required TransactionType TRANSACTION_TYPE { get; set; }
 
         public required decimal AMOUNT { get; set; }
 
@@ -20,7 +21,16 @@ namespace API_Practice.src.models.databaseModels
         public DateTime CREATED_AT { get; set; }
 
         public DateTime MODIFIED_AT { get; set; }
+
+        public AccountModel? ACCOUNT { get; set; }
         
+        public TransactionModel()
+        {
+            AMOUNT = 0.0M;
+            TRANSACTION_DATE = DateTime.Now;
+            CREATED_AT = DateTime.Now;
+            MODIFIED_AT = DateTime.Now;
+        }
     }       
     
 }

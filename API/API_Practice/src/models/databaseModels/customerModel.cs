@@ -17,5 +17,6 @@ namespace API_Practice.src.models.databaseModels
         public List<AddressModel> ADDRESSES { get; set; } = [];
         public List<EmailModel> EMAILS { get; set; } = [];
         public List<PhoneModel> PHONES { get; set; } = [];
+        public List<AccountModel> ACCOUNTS { get; set; } = [];
     }
 }
