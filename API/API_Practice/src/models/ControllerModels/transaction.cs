@@ -12,7 +12,7 @@ namespace API_Practice.src.models.ControllerModels
         public DateTime TransactionDate { get; set; }
         public string? Description { get; set; }
 
-        public static List<Transaction> MapModelToTransaction(List<TransactionModel> model)
+        public static List<Transaction> MapModelsToTransactions(List<TransactionModel> model)
         {
             List<Transaction> transactions = [];
             foreach (var transactionModel in model)
@@ -50,7 +50,7 @@ namespace API_Practice.src.models.ControllerModels
             };
         }
         
-        public static List<TransactionModel> MapTransactionToModel(List<Transaction> transactions, Account account)
+        public static List<TransactionModel> MapTransactionsToModels(List<Transaction> transactions, Account account)
         {
             List<TransactionModel> transactionModels = [];
             foreach (var transaction in transactions)

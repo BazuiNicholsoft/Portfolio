@@ -29,21 +29,21 @@ namespace API_Practice.src.models.ControllerModels
             return emails;
         }
 
-        public static EmailModel MapEmailToModel(Email email, CustomerModel customer)
+        public static EmailModel MapEmailToModel(Email email, Customer customer)
         {
             return new EmailModel
             {
                 ID = email.ID,
                 EMAIL_ADDRESS = email.EmailAddress,
                 CUSTOMER_ID = email.CustomerID,
-                CUSTOMER = customer,
+                CUSTOMER = Customer.MapCustomerToModel(customer),
                 IS_PRIMARY = email.IsPrimary,
                 CREATED_AT = DateTime.Now,
                 MODIFIED_AT = DateTime.Now
             };
         }
 
-        public static List<EmailModel> MapEmailsToModels(List<Email> emails, CustomerModel customer)
+        public static List<EmailModel> MapEmailsToModels(List<Email> emails, Customer customer)
         {
             List<EmailModel> emailModels = [];
             foreach (var email in emails)

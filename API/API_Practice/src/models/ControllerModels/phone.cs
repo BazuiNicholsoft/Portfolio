@@ -33,7 +33,7 @@ namespace API_Practice.src.models.ControllerModels
             return phones;
         }
 
-        public static PhoneModel MapPhoneToModel(Phone phone, CustomerModel customer)
+        public static PhoneModel MapPhoneToModel(Phone phone, Customer customer)
         {
             return new PhoneModel
             {
@@ -42,13 +42,13 @@ namespace API_Practice.src.models.ControllerModels
                 PHONE_TYPE = phone.PhoneType,
                 IS_PRIMARY = phone.IsPrimary,
                 CUSTOMER_ID = phone.CustomerID,
-                CUSTOMER = customer,
+                CUSTOMER = Customer.MapCustomerToModel(customer),
                 CREATED_AT = DateTime.Now,
                 MODIFIED_AT = DateTime.Now
             };
         }
 
-        public static List<PhoneModel> MapPhonesToModels(List<Phone> phones, CustomerModel customer)
+        public static List<PhoneModel> MapPhonesToModels(List<Phone> phones, Customer customer)
         {
             List<PhoneModel> phoneModels = [];
             foreach (var phone in phones)

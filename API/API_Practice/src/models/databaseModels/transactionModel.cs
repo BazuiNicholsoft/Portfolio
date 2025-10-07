@@ -23,7 +23,7 @@ namespace API_Practice.src.models.databaseModels
         public DateTime MODIFIED_AT { get; set; }
 
         public AccountModel? ACCOUNT { get; set; }
-        
+
         public TransactionModel()
         {
             AMOUNT = 0.0M;
@@ -31,6 +31,6 @@ namespace API_Practice.src.models.databaseModels
             CREATED_AT = DateTime.Now;
             MODIFIED_AT = DateTime.Now;
         }
-    }       
-    
+        
+    }
 }
