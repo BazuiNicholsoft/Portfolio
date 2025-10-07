@@ -1,0 +1,217 @@
+{
+    "customers": [
+        {
+            "ID": 1,
+            "FIRST_NAME": "John",
+            "MIDDLE_NAME": "A.",
+            "LAST_NAME": "Doe",
+            "BIRTH_DATE": "1990-01-01",
+            "CREATED_AT": "2023-01-01T00:00:00Z",
+            "MODIFIED_AT": "2023-01-01T00:00:00Z",
+            "ADDRESSES": [
+                {
+                    "ID": 1,
+                    "CUSTOMER_ID": 1,
+                    "STREET": "123 Main St",
+                    "CITY_NAME": "Anytown",
+                    "STATE_NAME": "CA",
+                    "ZIP_CODE": "12345",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-01-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-01-01T00:00:00Z"
+                }
+            ],
+            "EMAILS": [
+                {
+                    "ID": 1,
+                    "CUSTOMER_ID": 1,
+                    "EMAIL": "john.doe@example.com",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-01-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-01-01T00:00:00Z"
+                }
+            ],
+            "PHONES": [
+                {
+                    "ID": 1,
+                    "CUSTOMER_ID": 1,
+                    "PHONE_NUMBER": "555-1234",
+                    "PHONE_TYPE": "Mobile",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-01-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-01-01T00:00:00Z"
+                }
+            ],
+            "ACCOUNTS": [
+                {
+                    "ID": 1,
+                    "CUSTOMER_ID": 1,
+                    "ACCOUNT_TYPE": "Checking",
+                    "IS_ACTIVE": true,
+                    "CREATED_AT": "2023-01-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-01-01T00:00:00Z",
+                    "TRANSACTIONS": [
+                        {
+                            "ID": 1,
+                            "ACCOUNT_ID": 1,
+                            "TRANSACTION_TYPE": "Deposit",
+                            "AMOUNT": 500.00,
+                            "TRANSACTION_DATE": "2023-01-02T00:00:00Z",
+                            "DESCRIPTION": "Initial deposit"
+                        },
+                        {
+                            "ID": 2,
+                            "ACCOUNT_ID": 1,
+                            "TRANSACTION_TYPE": "Withdrawal",
+                            "AMOUNT": 200.00,
+                            "TRANSACTION_DATE": "2023-01-03T00:00:00Z",
+                            "DESCRIPTION": "ATM withdrawal"
+                        }
+                    ]
+                },
+                {
+                    "ID": 2,
+                    "CUSTOMER_ID": 1,
+                    "ACCOUNT_TYPE": "Savings",
+                    "IS_ACTIVE": true,
+                    "CREATED_AT": "2023-01-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-01-01T00:00:00Z",
+                    "TRANSACTIONS": [
+                        {
+                            "ID": 3,
+                            "ACCOUNT_ID": 2,
+                            "TRANSACTION_TYPE": "Deposit",
+                            "AMOUNT": 1000.00,
+                            "TRANSACTION_DATE": "2023-01-02T00:00:00Z",
+                            "DESCRIPTION": "Initial deposit"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID": 2,
+            "FIRST_NAME": "Jane",
+            "MIDDLE_NAME": "B.",
+            "LAST_NAME": "Smith",
+            "BIRTH_DATE": "1985-05-15",
+            "CREATED_AT": "2023-02-01T00:00:00Z",
+            "MODIFIED_AT": "2023-02-01T00:00:00Z",
+            "ADDRESSES": [
+                {
+                    "ID": 2,
+                    "CUSTOMER_ID": 2,
+                    "STREET": "456 Oak St",
+                    "CITY_NAME": "Othertown",
+                    "STATE_NAME": "NY",
+                    "ZIP_CODE": "67890",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z"
+                }
+            ],
+            "EMAILS": [
+                {
+                    "ID": 2,
+                    "CUSTOMER_ID": 2,
+                    "EMAIL": "jane.smith@example.com",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z"
+                }
+            ],
+            "PHONES": [
+                {
+                    "ID": 2,
+                    "CUSTOMER_ID": 2,
+                    "PHONE_NUMBER": "555-5678",
+                    "PHONE_TYPE": "Home",
+                    "IS_PRIMARY": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z"
+                },
+                {
+                    "ID": 3,
+                    "CUSTOMER_ID": 2,
+                    "PHONE_NUMBER": "555-8765",
+                    "PHONE_TYPE": "Work",
+                    "IS_PRIMARY": false,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z"
+                }
+            ],
+            "ACCOUNTS": [
+                {
+                    "ID": 3,
+                    "CUSTOMER_ID": 2,
+                    "ACCOUNT_TYPE": "Checking",
+                    "IS_ACTIVE": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z",
+                    "TRANSACTIONS": [
+                        {
+                            "ID": 4,
+                            "ACCOUNT_ID": 3,
+                            "TRANSACTION_TYPE": "Deposit",
+                            "AMOUNT": 750.00,
+                            "TRANSACTION_DATE": "2023-02-02T00:00:00Z",
+                            "DESCRIPTION": "Initial deposit"
+                        },
+                        {
+                            "ID": 5,
+                            "ACCOUNT_ID": 3,
+                            "TRANSACTION_TYPE": "Withdrawal",
+                            "AMOUNT": 100.00,
+                            "TRANSACTION_DATE": "2023-02-03T00:00:00Z",
+                            "DESCRIPTION": "Grocery shopping"
+                        }
+                    ]
+                },
+                {
+                    "ID": 4,
+                    "CUSTOMER_ID": 2,
+                    "ACCOUNT_TYPE": "Savings",
+                    "IS_ACTIVE": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z",
+                    "TRANSACTIONS": [
+                        {
+                            "ID": 6,
+                            "ACCOUNT_ID": 4,
+                            "TRANSACTION_TYPE": "Deposit",
+                            "AMOUNT": 1500.00,
+                            "TRANSACTION_DATE": "2023-02-02T00:00:00Z",
+                            "DESCRIPTION": "Initial deposit"
+                        }
+                    ]
+                },
+                {
+                    "ID": 5,
+                    "CUSTOMER_ID": 2,
+                    "ACCOUNT_TYPE": "Credit",
+                    "IS_ACTIVE": true,
+                    "CREATED_AT": "2023-02-01T00:00:00Z",
+                    "MODIFIED_AT": "2023-02-01T00:00:00Z",
+                    "TRANSACTIONS": [
+                        {
+                            "ID": 7,
+                            "ACCOUNT_ID": 5,
+                            "TRANSACTION_TYPE": "Purchase",
+                            "AMOUNT": 300.00,
+                            "TRANSACTION_DATE": "2023-02-04T00:00:00Z",
+                            "DESCRIPTION": "Electronics purchase"
+                        },
+                        {
+                            "ID": 8,
+                            "ACCOUNT_ID": 5,
+                            "TRANSACTION_TYPE": "Payment",
+                            "AMOUNT": 150.00,
+                            "TRANSACTION_DATE": "2023-02-05T00:00:00Z",
+                            "DESCRIPTION": "Credit card payment"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

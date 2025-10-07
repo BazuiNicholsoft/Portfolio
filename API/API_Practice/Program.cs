@@ -17,7 +17,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwaggerUi(Options =>
     {
-        Options.DocumentPath = "/openapi/v1.json";//path to test data file update once created
+        Options.DocumentPath = "/database.json";//path to test data file update once created
     });
 
 }
