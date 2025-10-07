@@ -59,11 +59,7 @@ namespace API_Practice.src.services
 
         public bool DeleteAddress(int id)
         {
-            var addressModel = _context.Addresses.FirstOrDefault(a => a.ID == id);
-            if (addressModel == null)
-            {
-                return false;
-            }
+            var addressModel = _context.Addresses.FirstOrDefault(a => a.ID == id) ?? throw new Exception("Address not found");
             _context.Addresses.Remove(addressModel);
             _context.SaveChanges();
             return true;

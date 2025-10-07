@@ -56,12 +56,7 @@ namespace API_Practice.src.services
 
         public bool DeleteAccount(int id)
         {
-            var accountModel = _dbContext.Accounts.FirstOrDefault(a => a.ID == id);
-            if (accountModel == null)
-            {
-                return false;
-            }
-
+            var accountModel = _dbContext.Accounts.FirstOrDefault(a => a.ID == id) ?? throw new Exception("Account not found");
             _dbContext.Accounts.Remove(accountModel);
             _dbContext.SaveChanges();
             return true;

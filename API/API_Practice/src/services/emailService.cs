@@ -56,11 +56,7 @@ namespace API_Practice.src.services
 
         public bool DeleteEmail(int id)
         {
-            var emailModel = _context.Emails.FirstOrDefault(e => e.ID == id);
-            if (emailModel == null)
-            {
-                return false;
-            }
+            var emailModel = _context.Emails.FirstOrDefault(e => e.ID == id) ?? throw new Exception("Email not found");
             _context.Emails.Remove(emailModel);
             _context.SaveChanges();
             return true;

@@ -56,11 +56,7 @@ namespace API_Practice.src.services
 
         public bool DeletePhone(int id)
         {
-            var phoneModel = _context.Phones.FirstOrDefault(p => p.ID == id);
-            if (phoneModel == null)
-            {
-                return false;
-            }
+            var phoneModel = _context.Phones.FirstOrDefault(p => p.ID == id) ?? throw new Exception("Phone not found");
             _context.Phones.Remove(phoneModel);
             _context.SaveChanges();
             return true;

@@ -51,11 +51,7 @@ namespace API_Practice.src.services
 
         public bool DeleteCustomer(int id)
         {
-            var customerModel = _dbContext.Customers.FirstOrDefault(c => c.ID == id);
-            if (customerModel == null)
-            {
-                return false;
-            }
+            var customerModel = _dbContext.Customers.FirstOrDefault(c => c.ID == id) ?? throw new Exception("Customer not found");
             _dbContext.Customers.Remove(customerModel);
             _dbContext.SaveChanges();
             return true;

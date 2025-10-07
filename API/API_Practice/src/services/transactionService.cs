@@ -56,11 +56,12 @@ namespace API_Practice.src.services
             return Transaction.MapModelToTransaction(transactionModel);
         }
 
-        public void DeleteTransaction(int id)
+        public bool DeleteTransaction(int id)
         {
             var transactionModel = _dbContext.Transactions.FirstOrDefault(t => t.ID == id) ?? throw new Exception("Transaction not found");
             _dbContext.Transactions.Remove(transactionModel);
             _dbContext.SaveChanges();
+            return true;
         }
     }
 }
