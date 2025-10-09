@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Header, Button } from '../atoms';
 import { GameInfo } from '../molecules';
 import { GameBoard } from '../molecules';
