@@ -1,7 +1,6 @@
-import React from 'react';
 import './Header.css';
 
-const Header = ( { text } ) => {
+const Header = ( { text }: { text: string } ) => {
     return (
         <header className="App-header">
             {text}

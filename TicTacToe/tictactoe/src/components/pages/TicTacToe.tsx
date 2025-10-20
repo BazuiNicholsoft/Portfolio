@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
 import { Header, Button } from '../atoms';
 import { GameInfo } from '../molecules';
 import { GameBoard } from '../molecules';
@@ -8,12 +8,12 @@ import ButtonStyles from '../atoms/Button/Button.module.css';
 
 const TicTacToe = () => {
   const [inprogress, setInProgress] = useState(false);
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(Array(9).fill(null as string | null));
   const [wins, setWins] = useState(0);
   const [draws, setDraws] = useState(0);
   const [losses, setLosses] = useState(0);
   const [currPlayer, setCurrPlayer] = useState('X');
-  const [winner, setWinner] = useState(null);
+  const [winner, setWinner] = useState(null as string | null);
 
   const onClickStart = () => {
     if (inprogress !== true) {
@@ -24,15 +24,15 @@ const TicTacToe = () => {
     setWinner(null);  
   }
 
-  const onClickCell = (index) => {
+  const onClickCell = (index: number) => {
     if (!inprogress || board[index] || winner) return;
 
-    const newBoard = [...board];
+    const newBoard: string[] = [...board];
     newBoard[index] = currPlayer;
     setBoard(newBoard);
 
     // Check for a winner
-    const newWinner = calculateWinner(newBoard);
+    const newWinner: string | null = calculateWinner(newBoard);
     if (newWinner) {
       setWinner(newWinner);
       if (newWinner === 'X') {
@@ -48,7 +48,7 @@ const TicTacToe = () => {
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
   }
-  const calculateWinner = (board) => {
+  const calculateWinner = (board: string[]) => {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],

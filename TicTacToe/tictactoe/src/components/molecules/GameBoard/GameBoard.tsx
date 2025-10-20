@@ -1,7 +1,7 @@
 import Square from '../Square';
 import styles from '../../atoms/Button/Button.module.css';
 import './GameBoard.css';
-const GameBoard = ({ board, onClickCell }) => {
+const GameBoard = ({ board, onClickCell }: { board: string[]; onClickCell: (index: number) => void }) => {
   return (
     <div className="gameBoard">
         <div className="boardRow">
