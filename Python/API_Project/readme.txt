@@ -1,0 +1,1 @@
+The Python API_Project is currently built from a tutorial. I am in the process of learning python and getting comfortable with its style and syntax.
