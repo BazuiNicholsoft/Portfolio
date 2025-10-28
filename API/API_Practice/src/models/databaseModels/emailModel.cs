@@ -13,6 +13,6 @@ namespace API_Practice.src.models.databaseModels
         public DateTime MODIFIED_AT { get; set; }
 
         // Navigation property
-        public required CustomerModel CUSTOMER { get; set; }
+        public CustomerModel? CUSTOMER { get; set; }
     }
 }

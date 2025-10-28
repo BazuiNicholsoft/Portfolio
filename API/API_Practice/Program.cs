@@ -6,8 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddDbContext<DatabaseContext>(option => option.UseInMemoryDatabase("database"));
-
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
