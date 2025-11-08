@@ -8,7 +8,7 @@ TicTacToe is a React app that allows you to play..... Tic-Tac-Toe.
 This uses react states to keep track of the board and various stats.
 Components are broken down using [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/).
 
-#Electronjs
+# Electronjs
 This folder contains my investigations and development of apps using Electronjs. Currently contains a basic setup from a tutorial.
 
 # API
